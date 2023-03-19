@@ -1,0 +1,26 @@
+{% extends "casa/base.html" %}
+
+{% load static %}
+
+{% block principal %}
+
+<h3 style="background-color:sandybrown"="color:rgb(255, 140, 0)"><p>SILLAS</p></h3>
+
+{% if form %}
+
+<form action="{% url 'silla' %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Cargar">
+</form>
+
+{% endif %}
+
+<ul>
+     {%  for silla in sillas %}  
+    <li> {{ silla.id }} - {{ silla.precio_silla }} - {{ silla.cantidad_silla }} </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

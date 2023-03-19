@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block principal %}
+
+<body>
+    <p>Silla buscada es: </p>
+
+    {% if silla %}
+
+    <ul>
+    {% for silla in silla %}
+        <li> {{silla.precio_silla}} </li>
+        <li> {{silla.cantidad_silla}} </li>
+
+    {% endfor %}
+    </ul>
+
+    {% endif %}
+</body>
+</html>
+
+{% endblock %}

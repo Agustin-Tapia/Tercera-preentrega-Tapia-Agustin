@@ -1,0 +1,26 @@
+{% extends "casa/base.html" %}
+
+{% load static %}
+
+{% block principal %}
+
+<h3 style="color: azure;background-color: crimson;"><p> SILLONES </p></h3>
+
+{% if form %}
+
+<form action="{% url 'sillon' %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Cargar">
+</form>
+
+{% endif %}
+
+<ul>
+     {%  for sillon in sillones %}  
+    <li> {{sillon.id}} - {{ sillon.precio_sillon }} - {{ sillon.cantidad_sillon}}</li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

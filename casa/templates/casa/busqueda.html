@@ -1,0 +1,25 @@
+{% extends "casa/base.html" %}
+
+{% load static %}
+{% block principal %}
+<head>
+
+<title>Busqueda de articulos</title>
+
+</head>
+
+<body>
+    
+    <form action="{% url 'buscar_silla' %}" method="GET">
+        
+        <input type="text" name="precio_silla" id="precio" placeholder="Ingrese su silla...">
+
+        <input type="submit" value="Buscar">
+
+    </form> 
+
+
+</body>
+
+{% endblock %}
+
