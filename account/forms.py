@@ -1,4 +1,4 @@
-from django.contrib.auth.forms import UserCreationForm, User
+from django.contrib.auth.forms import UserCreationForm, User 
 from django import forms
 
 class UserRegisterForm(UserCreationForm):

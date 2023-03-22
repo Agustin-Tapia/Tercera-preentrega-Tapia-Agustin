@@ -6,11 +6,11 @@
 
 <h3 style="background-color:sandybrown"="color:rgb(255, 140, 0)"><p>LOGIN</p></h3>
 
-    <form action="" method="post"></form>
+    <form action="" method="post">
     {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" value="Login"
-
+    <input type="submit" value="Login">
+    </form>  
 
 {% endblock %}
 

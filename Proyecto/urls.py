@@ -13,9 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
 from casa.views import base, art_silla, art_sillon, art_mesa, buscar_silla, busquedaSilla
+from django.conf.urls.static import static
+from Proyecto import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('base', base, name="base"),
@@ -24,5 +27,5 @@ urlpatterns = [
     path('articulo_mesa', art_mesa, name="mesa"),
     path('buscar_silla', buscar_silla, name= 'buscar_silla'),
     path('resultado-silla', busquedaSilla, name= 'resultado-silla'),
-    path('account', include('account.urls')),
-]
+    path('account', include('account.urls'))
+]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) #agregar para el avatar
